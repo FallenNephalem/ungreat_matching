@@ -11,8 +11,6 @@ alfabet = [['q','Q'],['w','W'],['e','E'],['r','R'],
 ['g','G'],['h','H'],['j','J'],['k','K'],['l','L'],
 ['z','Z'],['x','X'],['c','C'],['v','V'],['b','B'],
 ['n','N'],['m','M']]
-mkdefolt=0.7
-mismatching_chars=5
 
 
 def num_match_max(num1, num2):
@@ -39,7 +37,7 @@ def one_register(str1):
 	return str1
 
 
-def ungreat_match(str1,str2):
+def ungreat_match(str1,str2,mkdefolt=0.7,mismatching_chars=5):
 	i=0
 	lenth1 = len(str1)
 	lenth2 = len(str2)
@@ -60,7 +58,7 @@ def ungreat_match(str1,str2):
 				if char == str2[i]:
 					mk+=1
 			i+=1
-		if (mk >=  (min_num*0.7)):
+		if (mk >=  (min_num*mkdefolt)):
 			if min_num == lenth1:
 				keys = [str1, 'True']
 			elif min_num == lenth2:
