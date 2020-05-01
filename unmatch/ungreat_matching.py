@@ -1,6 +1,4 @@
 import math
-#from fuzzywuzzy import fuzz
-#from fuzzywuzzy import process
 
 
 # settings
@@ -25,26 +23,14 @@ def num_match_min(num1, num2):
 	else:
 		return num1
 
-def one_register(str1):
-	i=0
-	while i<len(str1):
-		j=0
-		while j<26:
-			if str1[i] == alfabet[j][1]:
-				str1 = str1.replace(alfabet[j][1], alfabet[j][0])
-			j+=1
-		i+=1
-	return str1
-
-
 def ungreat_match(str1,str2,mkdefolt=0.7,mismatching_chars=5):
 	i=0
 	lenth1 = len(str1)
 	lenth2 = len(str2)
 	mk = 0
 	min_num = num_match_min(lenth1, lenth2)
-	str1 = one_register(str1)
-	str2 = one_register(str2)
+	str1 = str1.lower()
+	str2 = str2.lower()
 	if str1 == str2:
 		keys = [str1, 'True']
 		return keys
